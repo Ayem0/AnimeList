@@ -25,16 +25,17 @@
                     <!-- ***** Search End ***** -->
                     <div class="search-input">
                       <form id="search" action="#">
-                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <input type="text" placeholder="Search an anime" id='searchText' name="searchKeyword" onkeypress="handle" />
                         <i class="fa fa-search"></i>
                       </form>
                     </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="{{ path('app_login') }}">Log in</a></li>
-                        <li><a href="{{ path('app_register') }}">Register</a></li>
+                        <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Home</a></li>
+                        <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Categories</a></li>
+                        <li><a href="{{ path('app_login') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Log in</a></li>
+                        <li><a href="{{ path('app_register') }}"{% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Register</a></li>
                         <li style="display: none;"><a href=''></a> </li>
                     </ul>   
                     <a class='menu-trigger'>

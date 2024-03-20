@@ -14,6 +14,11 @@
         <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
         {% block stylesheets %}{% endblock %}
+        
+        
+    </head>
+    <body>
+        {% block body %}{% endblock %}
         <script src={{ asset("vendor2/jquery/jquery.min.js" ) }}></script>
         <script src={{ asset("vendor2/bootstrap/js/bootstrap.min.js" ) }}></script>
         <script src={{ asset("assets/js/isotope.min.js" ) }}></script>
@@ -22,8 +27,5 @@
         <script src={{ asset("assets/js/popup.js" ) }}></script>
         <script src={{ asset("assets/js/custom.js" ) }}></script>
         {% block javascripts %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
     </body>
 </html>

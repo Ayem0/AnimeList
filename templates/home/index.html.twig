@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
     {% if app.user %}
@@ -8,5 +8,7 @@
     {% else %}
         {% include 'navbarLogout.html.twig' %}
     {% endif %}
+    {% include 'contentHome.html.twig' %}
+    {% include 'footer.html.twig' %}
 {% endblock %}
 
