@@ -22,7 +22,17 @@ class ListeCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('nom'),
             AssociationField::new('user_id')->autocomplete(),
-            AssociationField::new('anime_id')->autocomplete() // Permet de sélectionner l'utilisateur
+            AssociationField::new('anime_id')->autocomplete(),
+        ];
+    }
+
+    public function editFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id')->hideOnForm(),
+            TextField::new('nom'),
+            AssociationField::new('user_id')->autocomplete(),
+            AssociationField::new('anime_id')->autocomplete(),
         ];
     }
 
