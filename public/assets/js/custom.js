@@ -22,7 +22,7 @@
             wow.init();
         }
     });
-
+	/*
 	$(window).scroll(function() {
 	  var scroll = $(window).scrollTop();
 	  var box = $('.header-text').height();
@@ -34,6 +34,7 @@
 	    $("header").removeClass("background-header");
 	  }
 	});
+	*/
 	
 	$('.filters ul li').click(function(){
         $('.filters ul li').removeClass('active');
@@ -177,7 +178,7 @@
 			}
 		}
 	});
-
+	/*
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
 	    
@@ -216,7 +217,7 @@
 	            currLink.removeClass("active");
 	        }
 	    });
-	}
+	}*/
 
 
 	// Page loading animation

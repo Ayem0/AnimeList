@@ -2,30 +2,27 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Anime;
+use App\Entity\Categorie;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
-class AnimeCrudController extends AbstractCrudController
+class CategorieCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Anime::class;
+        return Categorie::class;
     }
 
-    
+    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id'),
             TextField::new('title'),
-            IdField::new('episode'),
-            TextField::new('genre'),
-            AssociationField::new('categorie')->autocomplete(),
+            TextEditorField::new('description'),
         ];
     }
-    
+    */
 }

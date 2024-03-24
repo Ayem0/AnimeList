@@ -31,13 +31,23 @@
                     </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
+                    {% if app.user %}
                     <ul class="nav">
-                        <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Home</a></li>
-                        <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Categories</a></li>
-                        <li><a href="{{ path('app_login') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Log in</a></li>
-                        <li><a href="{{ path('app_register') }}"{% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Register</a></li>
-                        <li style="display: none;"><a href=''></a> </li>
+                      <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Home</a></li>
+                      <li><a href="{{ path('app_categorie') }}" {% if app.request.attributes.get('_route') == 'app_categorie' %}class="active"{% endif %}>Categories</a></li>
+                      <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>My lists</a></li>
+                      <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>My Account <img src={{ asset('assets/images/profile-header.jpg')}} alt=""></a></li>
+                    </ul>
+                    {% else %}
+                    <ul class="nav">
+                      <li><a href="{{ path('app_home') }}" {% if app.request.attributes.get('_route') == 'app_home' %}class="active"{% endif %}>Home</a></li>
+                      <li><a href="{{ path('app_categorie') }}" {% if app.request.attributes.get('_route') == 'app_categorie' %}class="active"{% endif %}>Categories</a></li>
+                      <li><a href="{{ path('app_login') }}" {% if app.request.attributes.get('_route') == 'app_login' %}class="active"{% endif %}>Log in</a></li>
+                      <li><a href="{{ path('app_register') }}"{% if app.request.attributes.get('_route') == 'app_register' %}class="active"{% endif %}>Register</a></li>
+                      <li style="display: none;"><a href=''></a> </li>
                     </ul>   
+                    {% endif %}
+                  
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
