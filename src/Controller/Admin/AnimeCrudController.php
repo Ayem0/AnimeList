@@ -24,8 +24,7 @@ class AnimeCrudController extends AbstractCrudController
             TextField::new('title'),
             IdField::new('episode'),
             TextField::new('genre'),
-            AssociationField::new('categorie')->autocomplete(),
+            AssociationField::new('categorie', 'Categorie')->autocomplete(),
         ];
     }
-    
 }
