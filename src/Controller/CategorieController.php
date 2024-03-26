@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CategorieController extends AbstractController
 {
-    #[Route('/categorie', name: 'app_categorie')]
+    #[Route('/categories', name: 'app_categorie')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $categories = $doctrine->getRepository(Categorie::class)->findAll();
