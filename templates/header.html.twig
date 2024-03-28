@@ -24,10 +24,10 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
                     <div class="search-input">
-                    {{ form_start(SearchBarFormType, {'attr': {'id': 'search'}}) }}
-                    {{ form_widget(SearchBarFormType.title, {'attr': {'type': 'text', 'placeholder': 'Search an anime', 'id': 'searchText', 'name': 'searchKeyword' }}) }}
+                    {{ form_start(searchForm, {'attr': {'id': 'search'}}) }}
+                    {{ form_widget(searchForm.title, {'attr': {'type': 'text', 'placeholder': 'Search an anime', 'id': 'searchText', 'name': 'searchKeyword' }}) }}
                     <i class="fa fa-search"></i>
-                    {{ form_end(SearchBarFormType)}}
+                    {{ form_end(searchForm) }}
                       
                     </div>
                     <!-- ***** Search End ***** -->
