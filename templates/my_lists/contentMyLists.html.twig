@@ -20,12 +20,22 @@
                   {% for liste in listes %}
                   <div class="col-lg-3 col-sm-6">
                     <div class="item">
-                      <img src="assets/images/popular-01.jpg" alt="">
-                      <h4><a href="#">{{ liste.nom }}</a><br><span>Sandbox</span></h4>
+                      <a href= "{{ path('app_list', {'id': liste.id}) }}">
+                        <img src="{{ asset('assets/images/popular-01.jpg') }}" alt="">
+                      <a/>
+                      <h4><a href="{{ path('app_list', {'id': liste.id}) }}">{{ liste.nom }}</a><br><span>Sandbox</span></h4>
                       <ul>
                         <li><i class="fa fa-star"></i> 4.8</li>
                         <li><i class="fa fa-download"></i> 2.3M</li>
                       </ul>
+                      <form action="" method="post">
+                        <input type="hidden" name="_method" value="EDIT">
+                        <button type="submit">Edit</button>
+                      </form>
+                      <form action="{{ path('app_remove_list', {'id': liste.id}) }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Delete</button>
+                      </form>
                     </div>
                   </div>
                   {% endfor %}
