@@ -24,10 +24,11 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
                     <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Search an anime" id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
+                    {{ form_start(SearchBarFormType, {'attr': {'id': 'search'}}) }}
+                    {{ form_widget(SearchBarFormType.title, {'attr': {'type': 'text', 'placeholder': 'Search an anime', 'id': 'searchText', 'name': 'searchKeyword' }}) }}
+                    <i class="fa fa-search"></i>
+                    {{ form_end(SearchBarFormType)}}
+                      
                     </div>
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->

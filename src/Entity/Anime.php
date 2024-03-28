@@ -27,6 +27,9 @@ class Anime
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'animes')]
     private Collection $categorie;
 
+    #[ORM\ManyToMany(targetEntity: Liste::class, inversedBy: 'animes')]
+    private Collection $listes;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -98,5 +101,26 @@ class Anime
     }
     public function __toString() {
         return $this->getTitle();
+    }
+
+    public function getListes(): Collection
+    {
+        return $this->listes;
+    }
+
+    public function addListe(Liste $liste): static
+    {
+        if (!$this->listes->contains($liste)) {
+            $this->listes->add($liste);
+        }
+
+        return $this;
+    }
+
+    public function removeListe(Liste $liste): static
+    {
+        $this->listes->removeElement($liste);
+
+        return $this;
     }
 }
